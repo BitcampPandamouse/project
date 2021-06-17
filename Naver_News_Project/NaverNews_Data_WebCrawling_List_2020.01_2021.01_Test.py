@@ -5,7 +5,7 @@ import urllib.request
 import pandas as pd
 import datetime
 import ssl
-
+from datetime import date, timedelta
 
 
 searchname_list = ['맥주', '소주', '와인', '전통주', '위스키', '럼', '보드카', '막걸리', '청주', '지역소주', '고량주']
@@ -38,13 +38,32 @@ for searchname in searchname_list:
 
     #날짜 반복 구문(월단)
     for num in count():
-        tm = datetime.datetime(2021,1,1) - relativedelta(months=num)
-        tmp = tm.strftime(dateformat)
-        tmpnso = tm.strftime(dateformatnso)
-        beday= datetime.datetime(2021,1,1) - relativedelta(months=(num+1))
-        bmp = beday.strftime(dateformat)
-        bmpnso = beday.strftime(dateformatnso)
-        
+
+        start_date = date(2020, 1, 1)
+        end_date = date(2021, 1, 1)
+        delta = timedelta(days=7)
+        while start_date <= end_date:
+            time = start_date.strftime("%Y-%m-%d")
+            start_date += delta
+            print(time)
+    
+        ## time 시작값은 구했고
+        ## time 엔드값 구하기 근데 시작값과 같이 움직여야한다.
+        ## 1일씩 짜르는 방법도 있어요
+
+
+
+        # tm = datetime.datetime(2021,1,1) - relativedelta(months=num)
+        # tmp = tm.strftime(dateformat)
+        # tmpnso = tm.strftime(dateformatnso)
+        # beday= datetime.datetime(2021,1,1) - relativedelta(months=(num+1))
+        # bmp = beday.strftime(dateformat)
+        # bmpnso = beday.strftime(dateformatnso)
+
+
+
+
+
         # 입력한 월이 카운트 num를 넘으면 break
         if num > int(numbers)-int(1):
             break
