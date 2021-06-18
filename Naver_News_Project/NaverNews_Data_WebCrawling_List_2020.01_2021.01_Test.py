@@ -9,7 +9,7 @@ from datetime import date, timedelta
 
 
 searchname_list = ['맥주', '소주', '와인', '전통주', '위스키', '럼', '보드카', '막걸리', '청주', '지역소주', '고량주']
-# searchname = '맥주'
+# searchname = '맥주', 와인, 청주, 
 numbers = int(12)
 
 
