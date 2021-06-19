@@ -69,6 +69,6 @@ for searchname in searchname_list:
             except AttributeError as e:
                 break
     df =pd.DataFrame(result)
-    df.to_csv("./data/네이버%s뉴스.csv" %(searchname))
+    df.to_csv("./data/네이버%s뉴스_2019년도.csv" %(searchname))
     print("%s파일저장완료"%(searchname))
     result = []
