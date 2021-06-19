@@ -15,6 +15,8 @@ for a,c in zip(folder,color):
     ## 2021년 1월 데이터 삭제 ##
     df_drop = df[df['yyyymm']=='2020.01'].index
     df = df.drop(df_drop)
+    df_drop = df[df['yyyymm']=='2018.12'].index
+    df = df.drop(df_drop)
     ###########################
 
     df_groupby = df.groupby(['yyyymm']).agg('size') ## 월별 size 그룹화
