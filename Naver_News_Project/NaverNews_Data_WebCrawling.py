@@ -21,7 +21,7 @@ today = datetime.datetime.now()
 context = ssl._create_unverified_context()
 def get_request_url(url,enc='utf-8'):
     response = urllib.request.urlopen(url)
-    request = urllib.request.Request(url)
+    request = urllib.request.Request(url, headers={'USer-Agent':'Mozilla/5.0'})
     try:
         response = urllib.request.urlopen(request)
         if response.getcode() == 200:

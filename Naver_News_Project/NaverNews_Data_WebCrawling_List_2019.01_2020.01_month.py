@@ -5,6 +5,8 @@ import urllib.request
 import pandas as pd
 import datetime
 import ssl
+import urllib 
+
 
 searchname_list = ['소주', '전통주', '위스키', '럼', '보드카', '막걸리', '지역소주', '고량주']
 numbers = int(12)
@@ -13,9 +15,11 @@ dateformat = "%Y.%m.%d"
 dateformatnso = "%Y%m%d"
 today = datetime.datetime.now()
 context = ssl._create_unverified_context()
+
 def get_request_url(url,enc='utf-8'):
+    
     response = urllib.request.urlopen(url)
-    request = urllib.request.Request(url)
+    request = urllib.request.Request(url, headers={'USer-Agent':'Mozilla/5.0'})
     try:
         response = urllib.request.urlopen(request)
         if response.getcode() == 200:
@@ -25,6 +29,8 @@ def get_request_url(url,enc='utf-8'):
         print(e)
         print("[%s] Error for URL : %s" %(datetime.datetime.now(), url))
         return None
+
+
 for searchname in searchname_list:
     for num in count():
         tm = datetime.datetime(2020,1,1) - relativedelta(months=num)
