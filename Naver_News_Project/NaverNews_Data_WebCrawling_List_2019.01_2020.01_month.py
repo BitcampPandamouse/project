@@ -6,8 +6,8 @@ import pandas as pd
 import datetime
 import ssl
 
-searchname_list = ['맥주','와인']
-numbers = int(365)
+searchname_list = ['소주', '전통주', '위스키', '럼', '보드카', '막걸리', '지역소주', '고량주']
+numbers = int(12)
 result = []
 dateformat = "%Y.%m.%d"
 dateformatnso = "%Y%m%d"
@@ -27,13 +27,13 @@ def get_request_url(url,enc='utf-8'):
         return None
 for searchname in searchname_list:
     for num in count():
-        tm = datetime.datetime(2021,1,1) - datetime.timedelta(days=num)
+        tm = datetime.datetime(2020,1,1) - relativedelta(months=num)
         tmp = tm.strftime(dateformat)
         tmpnso = tm.strftime(dateformatnso)
-        beday= datetime.datetime(2021,1,1) - datetime.timedelta(days=num)
+        beday= datetime.datetime(2020,1,1) - relativedelta(months=(num+1))
         bmp = beday.strftime(dateformat)
         bmpnso = beday.strftime(dateformatnso)
-        if num > int(numbers+1):
+        if num > int(numbers)-int(1):
             break
         for page in count():
             endpoint = 'https://search.naver.com/search.naver'
