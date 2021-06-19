@@ -21,6 +21,7 @@ for a in folder:
     plt.legend(['고량주','럼','막걸리','맥주','보드카','소주','와인','위스키','전통주','지역소주'],loc='upper left', ncol = 3, fontsize=7, frameon = False)
 plt.show()
 
+
 folder = ['고량주','럼','보드카','위스키','전통주','지역소주']
 for a in folder:
     df = pd.read_csv('data/네이버%s뉴스.csv'%(str(a)))
