@@ -27,10 +27,10 @@ def get_request_url(url,enc='utf-8'):
         return None
 for searchname in searchname_list:
     for num in count():
-        tm = datetime.datetime(2021,1,1) - datetime.timedelta(days=num)
+        tm = datetime.datetime(2020,1,1) - datetime.timedelta(days=num)
         tmp = tm.strftime(dateformat)
         tmpnso = tm.strftime(dateformatnso)
-        beday= datetime.datetime(2021,1,1) - datetime.timedelta(days=num)
+        beday= datetime.datetime(2020,1,1) - datetime.timedelta(days=num)
         bmp = beday.strftime(dateformat)
         bmpnso = beday.strftime(dateformatnso)
         if num > int(numbers+1):
