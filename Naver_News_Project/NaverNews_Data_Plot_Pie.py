@@ -29,8 +29,6 @@ for year in years:
                 # facecolor='black',
                 wedgeprops=wedgeprops)
 
-
-
         plt.rcParams["figure.figsize"]=(8,8) ## 크기 조정
         plt.xlabel('%s월'%(number+1),loc='right', fontsize =20)
         plt.savefig('2020년%s월_pie_plot'%(str(number+1)))

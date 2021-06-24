@@ -3,8 +3,6 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 import numpy as np
 from PIL import Image
-from IPython.display import set_matplotlib_formats
-
 
 searchnmae = ['고량주','럼','막걸리','맥주','보드카','소주','와인','위스키','전통주','지역소주']
 year=['2019','2020']
@@ -14,9 +12,6 @@ year=['2019','2020']
 fp='C:/Windows/Fonts/malgun.ttf'
 ## 삭제할 단어 추가
 stopwords = ['등','더','종합','운세']
-set_matplotlib_formats('retina')
-
-
 
 for b in year:
     for a in searchnmae:
@@ -42,4 +37,3 @@ for b in year:
         plt.savefig('PNGdata/wordcloud/%swordcloud_%s.png'%(str(a),str(b)))
         # plt.show()
         plt.clf()
-# https://hyomyo.tistory.com/68
