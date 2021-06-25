@@ -8,7 +8,6 @@ for a in folder:
     df = pd.DataFrame()
     df1 = pd.read_csv('data/Filter_Data/네이버%s뉴스_2019.csv'%(str(a))) ## 데이터 불러오기
     df2 = pd.read_csv('data/Filter_Data/네이버%s뉴스_2020.csv'%(str(a)))
-    df = pd.concat([df1,df2])
     df1_groupby = df1.groupby(['mm']).agg('count') ## 월별 size 그룹화
     df2_groupby = df2.groupby(['mm']).agg('count')
     df = pd.concat([df1_groupby,df2_groupby])
