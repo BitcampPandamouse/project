@@ -8,6 +8,7 @@ for a in folder:
     df.columns=['num','yyyymmdd','names','title','text'] ## 컬럼이름 변경
     df['yyyymm'] = df['yyyymmdd'].apply(lambda x: x[0:7]) ## yyyymm 컬럼생성
     df['mm'] = df['yyyymmdd'].apply(lambda x: x[5:7]) ## mm 컬럼생성
+    df['mmdd'] = df['yyyymmdd'].apply(lambda x: x[5:10]) ## mm 컬럼생성
     df['name'] = a
     ## 2021년 1월 데이터 삭제 ##
     df_drop = df[df['yyyymm']=='2020.01'].index
@@ -25,8 +26,8 @@ for a in folder:
     df.columns=['num','yyyymmdd','names','title','text'] ## 컬럼이름 변경
     df['yyyymm'] = df['yyyymmdd'].apply(lambda x: x[0:7]) ## yyyymm 컬럼생성
     df['mm'] = df['yyyymmdd'].apply(lambda x: x[5:7]) ## mm 컬럼생성
+    df['mmdd'] = df['yyyymmdd'].apply(lambda x: x[5:10]) ## mm 컬럼생성
     df['name'] = a
-    
     ## 2021년 1월 데이터 삭제 ##
     df_drop = df[df['yyyymm']=='2021.01'].index
     df = df.drop(df_drop)
